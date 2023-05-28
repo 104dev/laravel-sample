@@ -10,4 +10,13 @@ class Department extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    protected $fillable = [
+        'name',
+    ];
+
+    public function employees()
+    {
+        return $this->hasMany('App\Models\Employee');
+    }
 }

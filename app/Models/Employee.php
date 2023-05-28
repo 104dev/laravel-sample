@@ -10,4 +10,12 @@ class Employee extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    public function department()
+    {
+        if (!empty($this->relations)) {
+            throw new \Exception('hoge');
+        }
+        return $this->belongsTo('App\Models\Department');
+    }
 }
